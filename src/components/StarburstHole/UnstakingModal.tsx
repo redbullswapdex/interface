@@ -5,13 +5,17 @@ import styled from 'styled-components'
 import { RowBetween } from '../Row'
 import { TYPE, CloseIcon } from '../../theme'
 import { ButtonError } from '../Button'
-import { StakingInfo } from '../../state/stake/hooks'
-import { useStakingContract } from '../../hooks/useContract'
+import { HoleInfo } from '../../state/stake/hooks'
+import { useHoleContract } from '../../hooks/useContract'
 import { SubmittedView, LoadingView } from '../ModalViews'
 import { TransactionResponse } from '@ethersproject/providers'
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import FormattedCurrencyAmount from '../FormattedCurrencyAmount'
 import { useActiveWeb3React } from '../../hooks'
+
+import Web3 from "web3";
+
+const web3 = new Web3();
 
 const ContentWrapper = styled(AutoColumn)`
   width: 100%;
@@ -21,10 +25,10 @@ const ContentWrapper = styled(AutoColumn)`
 interface StakingModalProps {
   isOpen: boolean
   onDismiss: () => void
-  stakingInfo: StakingInfo
+  holeInfo: HoleInfo
 }
 
-export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: StakingModalProps) {
+export default function UnstakingModal({ isOpen, onDismiss, holeInfo }: StakingModalProps) {
   const { account } = useActiveWeb3React()
 
   // monitor call to help UI loading state
@@ -38,13 +42,15 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
     onDismiss()
   }
 
-  const stakingContract = useStakingContract(stakingInfo.stakingRewardAddress)
+  const holeContract = useHoleContract();
 
   async function onWithdraw() {
-    if (stakingContract && stakingInfo?.stakedAmount) {
+    if (holeContract && holeInfo?.xSTARBURSTBalance) {
       setAttempting(true)
-      await stakingContract
-        .exit({ gasLimit: 300000 })
+      var balanceString = holeInfo?.xSTARBURSTBalance?.toSignificant(4);
+      var balance = web3.utils.toWei(balanceString, 'ether');
+      await holeContract
+        .leave( balance.toString() ,{ gasLimit: 300000 })
         .then((response: TransactionResponse) => {
           addTransaction(response, {
             summary: `Withdraw deposited liquidity`
@@ -62,7 +68,7 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
   if (!account) {
     error = 'Connect Wallet'
   }
-  if (!stakingInfo?.stakedAmount) {
+  if (!holeInfo?.xSTARBURSTBalance) {
     error = error ?? 'Enter an amount'
   }
 
@@ -74,26 +80,26 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
             <TYPE.mediumHeader>Withdraw</TYPE.mediumHeader>
             <CloseIcon onClick={wrappedOndismiss} />
           </RowBetween>
-          {stakingInfo?.stakedAmount && (
+          {holeInfo?.xSTARBURSTBalance && (
             <AutoColumn justify="center" gap="md">
               <TYPE.body fontWeight={600} fontSize={36}>
-                {<FormattedCurrencyAmount currencyAmount={stakingInfo.stakedAmount} />}
+                {<FormattedCurrencyAmount currencyAmount={holeInfo?.xSTARBURSTBalance} />}
               </TYPE.body>
-              <TYPE.body>Deposited liquidity:</TYPE.body>
+              <TYPE.body>xSTARBURST</TYPE.body>
             </AutoColumn>
           )}
-          {stakingInfo?.earnedAmount && (
+          {holeInfo?.STARBURSTBalance && (
             <AutoColumn justify="center" gap="md">
               <TYPE.body fontWeight={600} fontSize={36}>
-                {<FormattedCurrencyAmount currencyAmount={stakingInfo?.earnedAmount} />}
+                {<FormattedCurrencyAmount currencyAmount={holeInfo?.STARBURSTBalance} />}
               </TYPE.body>
-              <TYPE.body>Unclaimed STARBURST</TYPE.body>
+              <TYPE.body>Available STARBURST</TYPE.body>
             </AutoColumn>
           )}
           <TYPE.subHeader style={{ textAlign: 'center' }}>
-            When you withdraw, your STARBURST is claimed and your liquidity is removed from the mining pool.
+            When you withdraw, your STARBURST is claimed and your xSTARBURST tokens are burned.
           </TYPE.subHeader>
-          <ButtonError disabled={!!error} error={!!error && !!stakingInfo?.stakedAmount} onClick={onWithdraw}>
+          <ButtonError disabled={!!error} error={!!error && !!holeInfo?.xSTARBURSTBalance} onClick={onWithdraw}>
             {error ?? 'Withdraw & Claim'}
           </ButtonError>
         </ContentWrapper>
@@ -101,8 +107,8 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
       {attempting && !hash && (
         <LoadingView onDismiss={wrappedOndismiss}>
           <AutoColumn gap="12px" justify={'center'}>
-            <TYPE.body fontSize={20}>Withdrawing {stakingInfo?.stakedAmount?.toSignificant(4)} STARBURST-V2</TYPE.body>
-            <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(4)} STARBURST</TYPE.body>
+            <TYPE.body fontSize={20}>Withdrawing {holeInfo?.xSTARBURSTBalance?.toSignificant(4)} xSTARBURST</TYPE.body>
+            <TYPE.body fontSize={20}>Claiming {holeInfo?.STARBURSTBalance?.toSignificant(4)} STARBURST</TYPE.body>
           </AutoColumn>
         </LoadingView>
       )}
@@ -110,8 +116,8 @@ export default function UnstakingModal({ isOpen, onDismiss, stakingInfo }: Staki
         <SubmittedView onDismiss={wrappedOndismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>Withdrew STARBURST-V2!</TYPE.body>
-            <TYPE.body fontSize={20}>Claimed STARBURST!</TYPE.body>
+            <TYPE.body fontSize={20}>Withdrew STARBURST!</TYPE.body>
+            
           </AutoColumn>
         </SubmittedView>
       )}

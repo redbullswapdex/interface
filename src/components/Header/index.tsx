@@ -15,7 +15,7 @@ import transakSDK from '@transak/transak-sdk'
 import styled from 'styled-components'
 import { addPopup } from '../../state/application/actions'
 
-import Logo from '../../assets/images/QuickSwap_logo.png';
+import Logo from '../../assets/images/StarburstSwap_logo.png';
 import LogoMobile from '../../assets/images/logo_circle.png';
 //import LogoDark from '../../assets/svg/logo_white.svg'
 import { useActiveWeb3React } from '../../hooks'
@@ -410,13 +410,13 @@ export default function Header() {
           >
             {t('pool')}
           </StyledNavLink>
-          <StyledNavLink id={`stake-nav-link`} to={'/quick'} style={{marginLeft: mobile?'0px':'12px'}}>
+          <StyledNavLink id={`stake-nav-link`} to={'/starburst'} style={{marginLeft: mobile?'0px':'12px'}}>
           Rewards
           </StyledNavLink>
           {/*<StyledNavLink id={`stake-nav-link`} to={'/vote'}>*/}
             {/*Vote*/}
           {/*</StyledNavLink>*/}
-          <StyledExternalLink id={`stake-nav-link`} href={'https://info.quickswap.exchange'} style={{marginLeft: mobile?'0px':'12px', marginRight: mobile?'0px':'12px'}}>
+          <StyledExternalLink id={`stake-nav-link`} href={'https://info.starburstswap.exchange'} style={{marginLeft: mobile?'0px':'12px', marginRight: mobile?'0px':'12px'}}>
             Charts {!mobile && <span style={{ fontSize: '11px' }}>↗</span>}
           </StyledExternalLink>
 
@@ -424,7 +424,7 @@ export default function Header() {
             Buy
           </StyledLinkStyledButton>}
 
-          <StyledExternalLink id={`startido-nav-link`} href={'https://idos.starter.xyz/quickstart'} style={{marginLeft: mobile?'12px':'12px', marginRight: mobile?'4px':'12px'}}>
+          <StyledExternalLink id={`startido-nav-link`} href={'https://idos.starter.xyz/starburststart'} style={{marginLeft: mobile?'12px':'12px', marginRight: mobile?'4px':'12px'}}>
             IDO {!mobile && <span style={{ fontSize: '11px' }}>↗</span>}
           </StyledExternalLink>
           
@@ -448,7 +448,7 @@ export default function Header() {
             <UNIWrapper onClick={toggleClaimModal}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
                 <TYPE.white padding="0 2px">
-                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming QUICK</Dots> : 'Claim QUICK'}
+                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming STARBURST</Dots> : 'Claim STARBURST'}
                 </TYPE.white>
               </UNIAmount>
               <CardNoise />
@@ -475,7 +475,7 @@ export default function Header() {
                     </TYPE.white>
                   </HideSmall>
                 )}
-                QUICK
+                STARBURST
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>

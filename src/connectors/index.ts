@@ -46,7 +46,7 @@ export const walletconnect = new WalletConnectConnector({
 
 // mainnet only
 export const arkaneconnect = new ArkaneConnector({
-  clientID: 'QuickSwap',
+  clientID: 'StarburstSwap',
   chainId: 137
 })
 

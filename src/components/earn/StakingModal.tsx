@@ -224,7 +224,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
 
             <TYPE.black>
               {hypotheticalRewardRate.multiply((60 * 60 * 24).toString()).toSignificant(4, { groupSeparator: ',' })}{' '}
-              QUICK / day
+              STARBURST / day
             </TYPE.black>
           </HypotheticalRewardRate>
 
@@ -252,7 +252,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
         <LoadingView onDismiss={wrappedOnDismiss}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Depositing Liquidity</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>{parsedAmount?.toSignificant(4)} QUICK-V2</TYPE.body>
+            <TYPE.body fontSize={20}>{parsedAmount?.toSignificant(4)} STARBURST-V2</TYPE.body>
           </AutoColumn>
         </LoadingView>
       )}
@@ -260,7 +260,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
         <SubmittedView onDismiss={wrappedOnDismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>Deposited {parsedAmount?.toSignificant(4)} QUICK-V2</TYPE.body>
+            <TYPE.body fontSize={20}>Deposited {parsedAmount?.toSignificant(4)} STARBURST-V2</TYPE.body>
           </AutoColumn>
         </SubmittedView>
       )}

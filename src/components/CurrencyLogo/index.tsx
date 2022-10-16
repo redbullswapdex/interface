@@ -27,11 +27,11 @@ export const getTokenLogoURL = (address: string) => {
     }
   
     if (address?.toLowerCase() === '0xdb3b3b147a030f032633f6c4bebf9a2fb5a882b5') {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/assets/easyfi-token.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-interface/master/assets/easyfi-token.png'
     }
   
     if (address?.toLowerCase() === '0x831753dd7087cac61ab5644b308642cc1c33dc13') {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/public/favicon.jpeg'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-interface/master/public/favicon.jpeg'
     }
   
     if (address?.toLowerCase() === '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6') {
@@ -43,15 +43,15 @@ export const getTokenLogoURL = (address: string) => {
     }
   
     if (address?.toLowerCase() === '0x4ebde54ba404be158262ede801744b92b9878c61') {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/assets/easyfi-token.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-interface/master/assets/easyfi-token.png'
     }
   
     if (address?.toLowerCase() === '0xa1c09c8f4f5d03fcc27b456475d53d988e98d7c5') {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/assets/easyfi-token.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-interface/master/assets/easyfi-token.png'
     }
   
     if (address?.toLowerCase() === '0xfc39742fe9420a7af23757fc7e78d1c3ae4a9474') {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/assets/easyfi-token.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-interface/master/assets/easyfi-token.png'
     }
   
     if (address?.toLowerCase() === '0x9f5755d47fb80100e7ee65bf7e136fca85dd9334') {
@@ -103,7 +103,7 @@ export const getTokenLogoURL = (address: string) => {
     }
 
     if (address?.toLowerCase() === '0x2a93172c8DCCbfBC60a39d56183B7279a2F647b4'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/dg.jpg'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/dg.jpg'
     }
   
     if (address?.toLowerCase() === '0x3e121107F6F22DA4911079845a470757aF4e1A1b'.toLowerCase()) {
@@ -159,7 +159,7 @@ export const getTokenLogoURL = (address: string) => {
     }
 
     if (address?.toLowerCase() === '0x840195888Db4D6A99ED9F73FcD3B225Bb3cB1A79'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/sx.jpg'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/sx.jpg'
     }
   
     if (address?.toLowerCase() === '0xe6fc6c7cb6d2c31b359a49a33ef08ab87f4de7ce') {
@@ -203,7 +203,7 @@ export const getTokenLogoURL = (address: string) => {
     }
 
     if (address?.toLowerCase() === '0xf28164A485B0B2C90639E47b0f377b4a438a16B1'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-interface/master/public/favicon.jpeg'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-interface/master/public/favicon.jpeg'
     }
 
     if (address?.toLowerCase() === '0xd85d1e945766fea5eda9103f918bd915fbca63e6'.toLowerCase()) {
@@ -227,7 +227,7 @@ export const getTokenLogoURL = (address: string) => {
     }
 
     if (address?.toLowerCase() === '0x7CdC0421469398e0F3aA8890693d86c840Ac8931'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/azuki.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/azuki.png'
     }
 
     if (address?.toLowerCase() === '0xd28449BB9bB659725aCcAd52947677ccE3719fD7'.toLowerCase()) {
@@ -235,7 +235,7 @@ export const getTokenLogoURL = (address: string) => {
     }
 
     if (address?.toLowerCase() === '0x8a2870fb69A90000D6439b7aDfB01d4bA383A415'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/DEGEN_LOGO.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/DEGEN_LOGO.png'
     }
 
     if (address?.toLowerCase() === '0x521CddC0CBa84F14c69C1E99249F781AA73Ee0BC'.toLowerCase()) {
@@ -306,7 +306,7 @@ export const getTokenLogoURL = (address: string) => {
     if (address?.toLowerCase() === '0x7075cAB6bCCA06613e2d071bd918D1a0241379E2'.toLowerCase()) {
       uri = 'https://gains.farm/images/logo256.png'
     }if (address?.toLowerCase() === '0xf7d9e281c5Cb4C6796284C5b663b3593D2037aF2'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/NFTP.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/NFTP.png'
     }
 
     if (address?.toLowerCase() === '0xD6DF932A45C0f255f85145f286eA0b292B21C90B'.toLowerCase()) {
@@ -360,7 +360,7 @@ export const getTokenLogoURL = (address: string) => {
     }
 
     if (address?.toLowerCase() === '0xB9638272aD6998708de56BBC0A290a1dE534a578'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/IQ.png'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/IQ.png'
     }
 
     if (address?.toLowerCase() === '0x6DdB31002abC64e1479Fc439692F7eA061e78165'.toLowerCase()) {
@@ -382,7 +382,7 @@ export const getTokenLogoURL = (address: string) => {
     if (address?.toLowerCase() === '0xA16EbA3b7562FC92597579A80Fe53a92DCab7122'.toLowerCase()) {
       uri = 'https://i.imgur.com/q0LZUrw.png'
     }if (address?.toLowerCase() === '0x2628568509E87c4429fBb5c664Ed11391BE1BD29'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/renDGB.svg'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/renDGB.svg'
     }if (address?.toLowerCase() === '0x41b3966B4FF7b427969ddf5da3627d6AEAE9a48E'.toLowerCase()) {
       uri = 'https://s2.coinmarketcap.com/static/img/coins/200x200/2694.png'
     }
@@ -446,7 +446,7 @@ export const getTokenLogoURL = (address: string) => {
     }if (address?.toLowerCase() === '0xff88434E29d1E2333aD6baa08D358b436196da6b'.toLowerCase()) {
       uri = 'https://i.imgur.com/Jo6QWz7.png'
     }if (address?.toLowerCase() === '0x1B815d120B3eF02039Ee11dC2d33DE7aA4a8C603'.toLowerCase()) {
-      uri = 'https://raw.githubusercontent.com/sameepsi/quickswap-default-token-list/master/assets/wootrade_w.svg'
+      uri = 'https://raw.githubusercontent.com/sameepsi/starburstswap-default-token-list/master/assets/wootrade_w.svg'
     }
 
     if (address?.toLowerCase() === '0x6Ccf12B480A99C54b23647c995f4525D544A7E72'.toLowerCase()) {

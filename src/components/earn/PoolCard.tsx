@@ -117,7 +117,7 @@ export default function PoolCard({ stakingInfo, isOld }: { stakingInfo: StakingI
     valueOfTotalStakedAmountInBaseToken && USDPrice?.quote(valueOfTotalStakedAmountInBaseToken)
   
   //@ts-ignore
-  const perMonthReturnInRewards: any = (stakingInfo?.rate * stakingInfo?.quickPrice * 30) / Number(valueOfTotalStakedAmountInUSDC?.toSignificant(6));
+  const perMonthReturnInRewards: any = (stakingInfo?.rate * stakingInfo?.starburstPrice * 30) / Number(valueOfTotalStakedAmountInUSDC?.toSignificant(6));
   
 
   //let apy = 0;
@@ -127,7 +127,7 @@ export default function PoolCard({ stakingInfo, isOld }: { stakingInfo: StakingI
   //apy = perMonthReturnInRewards/Number(valueOfTotalStakedAmountInUSDC?.toSignificant(6)) * 100;
 
   //@ts-ignore
-  rewards = stakingInfo?.rate * stakingInfo?.quickPrice;
+  rewards = stakingInfo?.rate * stakingInfo?.starburstPrice;
 
   if(stakingInfo?.oneYearFeeAPY && stakingInfo?.oneYearFeeAPY > 0) {
     //@ts-ignore
@@ -161,7 +161,7 @@ export default function PoolCard({ stakingInfo, isOld }: { stakingInfo: StakingI
           </ButtonPrimary>
         </StyledInternalLink>
         ) : (
-          <StyledInternalLink to={`/quick/${currencyId(currency0)}/${currencyId(currency1)}/${stakingInfo.stakingRewardAddress}`} style={{ width: '100%' }}>
+          <StyledInternalLink to={`/starburst/${currencyId(currency0)}/${currencyId(currency1)}/${stakingInfo.stakingRewardAddress}`} style={{ width: '100%' }}>
             <ButtonPrimary padding="8px" borderRadius="8px">
               {isStaking ? 'Manage' : 'Deposit'}
             </ButtonPrimary>
@@ -187,7 +187,7 @@ export default function PoolCard({ stakingInfo, isOld }: { stakingInfo: StakingI
         <RowBetween>
           <TYPE.white> Pool rate </TYPE.white>
           <TYPE.white>{`${stakingInfo.totalRewardRate
-            ?.toFixed(2, { groupSeparator: ',' }).replace(/[.,]00$/, "")} QUICK / day`}</TYPE.white>
+            ?.toFixed(2, { groupSeparator: ',' }).replace(/[.,]00$/, "")} STARBURST / day`}</TYPE.white>
         </RowBetween>
 
         { 
@@ -234,7 +234,7 @@ export default function PoolCard({ stakingInfo, isOld }: { stakingInfo: StakingI
               </span>
               {`${stakingInfo.rewardRate
                 ?.multiply(`${60 * 60 * 24}`)
-                ?.toSignificant(4, { groupSeparator: ',' })} QUICK / day`}
+                ?.toSignificant(4, { groupSeparator: ',' })} STARBURST / day`}
             </TYPE.black>
           </BottomSection>
 
