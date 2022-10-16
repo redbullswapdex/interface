@@ -3778,7 +3778,7 @@
 				return [ke]
 			}), [ke])); return Object(i.useMemo)((function () {
 				var e, n, t, a, r, i, u, p, m, b; return {
-					lairAddress:ke, xSTARBURSTtoSTARBURST:new g.TokenAmount(xe, g.JSBI.BigInt(null !== (e = null === o || void 0 === o || null === (n = o.result) || void 0 === n? void 0:n[0]) && void 0 !== e? e:0)), STARBURSTtoxSTARBURST:new g.TokenAmount(kn, g.JSBI.BigInt(null !== (t = null === d || void 0 === d || null === (a = d.result) || void 0 === a? void 0:a[0]) && void 0 !== t? t:0)), xSTARBURSTBalance:new g.TokenAmount(kn, g.JSBI.BigInt(null !== (r = null === c || void 0 === c || null === (i = c.result) || void 0 === i? void 0:i[0]) && void 0 !== r? r:0)), STARBURSTBalance:new g.TokenAmount(xe, g.JSBI.BigInt(null !== (u = null === s || void 0 === s || null === (p = s.result) || void 0 === p? void 0:p[0]) && void 0 !== u? u:0)), totalStarburstBalance:new g.TokenAmount(xe, g.JSBI.BigInt(null !== (m = null === l || void 0 === l || null === (b = l.result) || void 0 === b? void 0:b[0]) && void 0 !== m? m:0))
+					holeAddress:ke, xSTARBURSTtoSTARBURST:new g.TokenAmount(xe, g.JSBI.BigInt(null !== (e = null === o || void 0 === o || null === (n = o.result) || void 0 === n? void 0:n[0]) && void 0 !== e? e:0)), STARBURSTtoxSTARBURST:new g.TokenAmount(kn, g.JSBI.BigInt(null !== (t = null === d || void 0 === d || null === (a = d.result) || void 0 === a? void 0:a[0]) && void 0 !== t? t:0)), xSTARBURSTBalance:new g.TokenAmount(kn, g.JSBI.BigInt(null !== (r = null === c || void 0 === c || null === (i = c.result) || void 0 === i? void 0:i[0]) && void 0 !== r? r:0)), STARBURSTBalance:new g.TokenAmount(xe, g.JSBI.BigInt(null !== (u = null === s || void 0 === s || null === (p = s.result) || void 0 === p? void 0:p[0]) && void 0 !== u? u:0)), totalStarburstBalance:new g.TokenAmount(xe, g.JSBI.BigInt(null !== (m = null === l || void 0 === l || null === (b = l.result) || void 0 === b? void 0:b[0]) && void 0 !== m? m:0))
 				}
 			}), [ke, o, d, s, c])
 		}function ol(e) {
@@ -6880,7 +6880,7 @@
 		})), Qh = ka.default.div(Nh || (Nh = Object(ba.a)(["\n  display: grid;\n  grid-template-columns: 48px 1fr 120px;\n  grid-gap: 0px;\n  align-items: center;\n  padding: 1rem;\n  z-index: 1;\n  ", ";\n"])), (function (e) {
 			return e.theme.mediaWidth.upToSmall(Mh || (Mh = Object(ba.a)(["\n    grid-template-columns: 48px 1fr 96px;\n  "])))
 		})); function Vh(e) {
-			var n, t, a, r = e.lairInfo, o = cc(xe), i = cc(kn), s = SE(xe); return d.a.createElement(zh, {
+			var n, t, a, r = e.holeInfo, o = cc(xe), i = cc(kn), s = SE(xe); return d.a.createElement(zh, {
 				showBackground:!0, bgColor:s
 			}, d.a.createElement(Ph, {
 				desaturate:!0
@@ -6984,8 +6984,8 @@
 				style: {
 					marginTop:"0.5rem"
 				}
-			}, "Dragon's Lair")), d.a.createElement(cC, null, d.a.createElement(Vh, {
-				lairInfo:z
+			}, "Black Hole")), d.a.createElement(cC, null, d.a.createElement(Vh, {
+				holeInfo:z
 			}))), d.a.createElement($a, {
 				gap:"lg", style: {
 					width:"100%", maxWidth:"720px"
@@ -9264,13 +9264,13 @@
 		}var mT, bT = ka.default.div(eT || (eT = Object(ba.a)(["\n  display: flex;\n  justify-content: space-between;\n  padding-right: 20px;\n  padding-left: 20px;\n\n  opacity: ", ";\n"])), (function (e) {
 			return e.dim? .5:1
 		})), fT = Object(ka.default)($a)(nT || (nT = Object(ba.a)(["\n  width: 100%;\n  padding: 1rem;\n"]))); function kT(e) {
-			var n = e.isOpen, t = e.onDismiss, a = e.lairInfo, r = e.userLiquidityUnstaked, o = Object(i.useState)(""), s = Object(S.a)(o, 2), c = s[0], l = s[1], u = function (e, n, t) {
+			var n = e.isOpen, t = e.onDismiss, a = e.holeInfo, r = e.userLiquidityUnstaked, o = Object(i.useState)(""), s = Object(S.a)(o, 2), c = s[0], l = s[1], u = function (e, n, t) {
 				var a, r, o = Cr().account, i = zc(e, n), d = i && t && g.JSBI.lessThanOrEqual(i.raw, t.raw) ? i:void 0; return o || (a = "Connect Wallet"), d || (a = null !== (r = a) && void 0 !== r? r:"Enter an amount"), {
 					parsedAmount:d, error:a
 				}
 			}(c, a.STARBURSTBalance.token, r), p = u.parsedAmount, m = u.error, b = a.STARBURSTtoxSTARBURST, f = Object(i.useState)(!1), k = Object(S.a)(f, 2), A = k[0], v = k[1], E = Object(i.useState)(), h = Object(S.a)(E, 2), y = h[0], w = h[1], T = Object(i.useCallback)((function () {
 				w(void 0), v(!1), t()
-			}), [t]), B = new g.Pair(a.STARBURSTtoxSTARBURST, a.xSTARBURSTtoSTARBURST), D = zE(p, a.lairAddress), O = Object(S.a)(D, 2), F = O[0], j = O[1], R = ri(); function I() {
+			}), [t]), B = new g.Pair(a.STARBURSTtoxSTARBURST, a.xSTARBURSTtoSTARBURST), D = zE(p, a.holeAddress), O = Object(S.a)(D, 2), F = O[0], j = O[1], R = ri(); function I() {
 				return (I = Object(x.a)(C.a.mark((function e() {
 					return C.a.wrap((function (e) {
 						for (; ; ) switch (e.prev = e.next) {
@@ -9338,7 +9338,7 @@
 				fontSize:20
 			}, "Deposited ", null === p || void 0 === p? void 0:p.toSignificant(4), " STARBURST-V2"))))
 		}var gT, AT, vT, ET, hT, CT, xT, yT = new W.a, wT = Object(ka.default)($a)(mT || (mT = Object(ba.a)(["\n  width: 100%;\n  padding: 1rem;\n"]))); function TT(e) {
-			var n, t, a, r = e.isOpen, o = e.onDismiss, s = e.lairInfo, c = Cr().account, l = bs(), u = Object(i.useState)(), p = Object(S.a)(u, 2), m = p[0], b = p[1], f = Object(i.useState)(!1), k = Object(S.a)(f, 2), g = k[0], A = k[1]; function v() {
+			var n, t, a, r = e.isOpen, o = e.onDismiss, s = e.holeInfo, c = Cr().account, l = bs(), u = Object(i.useState)(), p = Object(S.a)(u, 2), m = p[0], b = p[1], f = Object(i.useState)(!1), k = Object(S.a)(f, 2), g = k[0], A = k[1]; function v() {
 				b(void 0), A(!1), o()
 			}var E, h, y = ri(); function w() {
 				return (w = Object(x.a)(C.a.mark((function e() {
@@ -9449,11 +9449,11 @@
 			}), " xSTARBURST / STARBURST"))))), o && d.a.createElement(d.a.Fragment, null, d.a.createElement(kT, {
 				isOpen:p, onDismiss:function () {
 					return m(!1)
-				}, lairInfo:o, userLiquidityUnstaked:E
+				}, holeInfo:o, userLiquidityUnstaked:E
 			}), d.a.createElement(TT, {
 				isOpen:k, onDismiss:function () {
 					return A(!1)
-				}, lairInfo:o
+				}, holeInfo:o
 			})), d.a.createElement(IT, {
 				gap:"lg", justify:"center", dim:h
 			}, d.a.createElement(ST, {
