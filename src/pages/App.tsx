@@ -30,7 +30,7 @@ import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, Redirec
 
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
-import ManageLair from './QuickLair/ManageLair'
+import ManageHole from './StarburstHole/ManageHole'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -96,7 +96,7 @@ export default function App() {
               <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
               <Route exact strict path="/find" component={PoolFinder} />
               <Route exact strict path="/pool" component={Pool} />
-              <Route exact strict path="/quick" component={Earn} />
+              <Route exact strict path="/starburst" component={Earn} />
               <Route exact strict path="/archive" component={Old} />
               <Route exact strict path="/vote" component={Vote} />
               <Route exact strict path="/create" component={RedirectToAddLiquidity} />
@@ -108,8 +108,8 @@ export default function App() {
               <Route exact path="/create/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />
               <Route exact strict path="/remove/:tokens" component={RedirectOldRemoveLiquidityPathStructure} />
               <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
-              <Route exact strict path="/quick/:currencyIdA/:currencyIdB/:rewardsAddress" component={Manage} />
-              <Route exact strict path="/dquick" component={ManageLair} />
+              <Route exact strict path="/starburst/:currencyIdA/:currencyIdB/:rewardsAddress" component={Manage} />
+              <Route exact strict path="/xstarburst" component={ManageHole} />
               <Route exact strict path="/archive/:currencyIdA/:currencyIdB/:rewardsAddress" component={ManageOld} />
               <Route exact strict path="/vote/:id" component={VotePage} />
               <Route component={RedirectPathToSwapOnly} />

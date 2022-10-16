@@ -51,16 +51,16 @@ export default function Old() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Quickswap liquidity mining</TYPE.white>
+                <TYPE.white fontWeight={600}>Starburstswap liquidity mining</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your Liquidity Provider tokens to receive QUICK, the Quickswap protocol governance token.
+                  Deposit your Liquidity Provider tokens to receive STARBURST, the Starburstswap protocol governance token.
                 </TYPE.white>
               </RowBetween>{' '}
               <RowBetween>
 
-              <ExternalLink id={`old-pools-link`} href={'https://quickswap.exchange/#/quick'} style={{ width: '20%' }}>
+              <ExternalLink id={`old-pools-link`} href={'https://starburstswap.exchange/#/starburst'} style={{ width: '20%' }}>
               
                   <ButtonPrimary padding="8px" borderRadius="8px">
                     New Pools
@@ -72,7 +72,7 @@ export default function Old() {
                 href="https://uniswap.org/blog/uni/"
                 target="_blank"
               >
-                <TYPE.white fontSize={14}>Read more about QUICK</TYPE.white>
+                <TYPE.white fontSize={14}>Read more about STARBURST</TYPE.white>
               </ExternalLink>*/}
             </AutoColumn>
           </CardSection>

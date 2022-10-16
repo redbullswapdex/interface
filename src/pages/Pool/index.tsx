@@ -172,7 +172,7 @@ export default function Pool() {
               <>
                 <ButtonSecondary>
                   <RowBetween>
-                    <ExternalLink href={'https://info.quickswap.exchange/account/' + account}>
+                    <ExternalLink href={'https://info.starburstswap.exchange/account/' + account}>
                       Account analytics and accrued fees
                     </ExternalLink>
                     <span> ↗</span>

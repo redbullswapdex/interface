@@ -5,7 +5,7 @@ import { STAKING_REWARDS_INFO, useStakingInfo, useOldStakingInfo, useLairInfo, S
 import { TYPE, ExternalLink} from '../../theme'
 import { isMobile } from 'react-device-detect'
 import PoolCard from '../../components/earn/PoolCard'
-import LairCard from '../../components/QuickLair/LairCard'
+import LairCard from '../../components/StarburstHole/HoleCard'
 
 import { RowBetween } from '../../components/Row'
 import { ButtonPrimary } from '../../components/Button'
@@ -145,7 +145,7 @@ export default function Earn() {
       setTotalFee(atotalFee)
       if(totalRewards > 0) {
         //@ts-ignore
-        var atotalRewardsUSD: any = stakingInfos[0].quickPrice * totalRewards;
+        var atotalRewardsUSD: any = stakingInfos[0].starburstPrice * totalRewards;
         atotalRewardsUSD = parseInt(atotalRewardsUSD.toFixed(0)).toLocaleString();
         setTotalRewardsUSD(atotalRewardsUSD);
       }
@@ -231,16 +231,16 @@ export default function Earn() {
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Quickswap liquidity mining</TYPE.white>
+                <TYPE.white fontWeight={600}>Starburstswap liquidity mining</TYPE.white>
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your Liquidity Provider tokens to receive QUICK, the Quickswap protocol governance token.
+                  Deposit your Liquidity Provider tokens to receive STARBURST, the Starburstswap protocol governance token.
                 </TYPE.white>
                 
               </RowBetween>{' '}
               <RowBetween>
-              <ExternalLink id={`old-pools-link`} href={'https://quickswap.exchange/#/archive'} style={{width: isMobile?'50%':'25%'}}>
+              <ExternalLink id={`old-pools-link`} href={'https://starburstswap.exchange/#/archive'} style={{width: isMobile?'50%':'25%'}}>
               
                   <ButtonPrimary padding="8px" borderRadius="8px">
                     Archived Pools
@@ -284,7 +284,7 @@ export default function Earn() {
         <RowBetween style={{marginTop: "10px"}}>
           <TYPE.white> Reward Rate</TYPE.white>
           <TYPE.white>
-            {totalRewards.toFixed(0)} QUICK / day
+            {totalRewards.toFixed(0)} STARBURST / day
           </TYPE.white>
         </RowBetween>
         <RowBetween style={{marginTop: "10px"}}>
