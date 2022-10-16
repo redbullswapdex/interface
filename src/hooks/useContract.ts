@@ -6,7 +6,7 @@ import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build
 import { ChainId, WETH } from '@uniswap/sdk'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { useMemo } from 'react'
-import { GOVERNANCE_ADDRESS, MERKLE_DISTRIBUTOR_ADDRESS, UNI, HOLE_ADDRESS, QUICK_ADDRESS } from '../constants'
+import { GOVERNANCE_ADDRESS, MERKLE_DISTRIBUTOR_ADDRESS, UNI, HOLE_ADDRESS, STARBURST_ADDRESS } from '../constants'
 import {
   ARGENT_WALLET_DETECTOR_ABI,
   ARGENT_WALLET_DETECTOR_MAINNET_ADDRESS
@@ -106,8 +106,8 @@ export function useHoleContract(): Contract | null {
   return useContract(HOLE_ADDRESS, HoleABI, true)
 }
 
-export function useQUICKContract(): Contract | null {
-  return useContract(QUICK_ADDRESS, ERC20_ABI, true)
+export function useSTARBURSTContract(): Contract | null {
+  return useContract(STARBURST_ADDRESS, ERC20_ABI, true)
 }
 
 export function useV1FactoryContract(): Contract | null {
