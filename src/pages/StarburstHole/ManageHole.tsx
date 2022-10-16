@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import { JSBI } from '@uniswap/sdk'
 import { STARBURST, XSTARBURST } from "../../constants/index";
-import { useLairInfo } from '../../state/stake/hooks'
+import { useHoleInfo } from '../../state/stake/hooks'
 import DoubleCurrencyLogo from '../../components/DoubleLogo'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { TYPE } from '../../theme'
@@ -62,10 +62,10 @@ const DataRow = styled(RowBetween)`
   `};
 `
 
-export default function ManageLair() {
+export default function ManageHole() {
   const { account } = useActiveWeb3React()
 
-  const lairInfo = useLairInfo();
+  const holeInfo = useHoleInfo();
   const currency0 = unwrappedToken(STARBURST)
   const currency1 = unwrappedToken(XSTARBURST)
 
@@ -75,7 +75,7 @@ export default function ManageLair() {
   const backgroundColor = useColor(STARBURST);
 
   const userLiquidityUnstaked = useTokenBalance(account ?? undefined, STARBURST)
-  const showAddLiquidityButton = Boolean(lairInfo?.xSTARBURSTBalance?.equalTo('0') && userLiquidityUnstaked?.equalTo('0'))
+  const showAddLiquidityButton = Boolean(holeInfo?.xSTARBURSTBalance?.equalTo('0') && userLiquidityUnstaked?.equalTo('0'))
 
 
   const toggleWalletModal = useWalletModalToggle()
@@ -91,7 +91,7 @@ export default function ManageLair() {
     <PageWrapper gap="lg" justify="center">
       <RowBetween style={{ gap: '24px' }}>
         <TYPE.mediumHeader style={{ margin: 0 }}>
-        Dragon's Lair
+        Dragon's Hole
         </TYPE.mediumHeader>
         <DoubleCurrencyLogo currency0={currency0 ?? undefined} currency1={currency1 ?? undefined} size={24} />
       </RowBetween>
@@ -101,7 +101,7 @@ export default function ManageLair() {
           <AutoColumn gap="sm">
             <TYPE.body style={{ margin: 0 }}>Total STARBURST</TYPE.body>
             <TYPE.body fontSize={24} fontWeight={500}>
-            { lairInfo ? lairInfo.totalStarburstBalance.toFixed(2, {groupSeparator: ','}): 0 }
+            { holeInfo ? holeInfo.totalStarburstBalance.toFixed(2, {groupSeparator: ','}): 0 }
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -109,7 +109,7 @@ export default function ManageLair() {
           <AutoColumn gap="sm">
             <TYPE.body style={{ margin: 0 }}>xSTARBURST Rate</TYPE.body>
             <TYPE.body fontSize={24} fontWeight={500}>
-            {`${lairInfo.STARBURSTtoxSTARBURST
+            {`${holeInfo.STARBURSTtoxSTARBURST
             ?.toFixed(8, { groupSeparator: ',' })} xSTARBURST / STARBURST`}
             </TYPE.body>
           </AutoColumn>
@@ -147,18 +147,18 @@ export default function ManageLair() {
         </VoteCard>
       )*/}
 
-      {lairInfo && (
+      {holeInfo && (
         <>
           <StakingModal
             isOpen={showStakingModal}
             onDismiss={() => setShowStakingModal(false)}
-            lairInfo={lairInfo}
+            holeInfo={holeInfo}
             userLiquidityUnstaked={userLiquidityUnstaked}
           />
           <UnstakingModal
             isOpen={showUnstakingModal}
             onDismiss={() => setShowUnstakingModal(false)}
-            lairInfo={lairInfo}
+            holeInfo={holeInfo}
           />
         </>
       )}
@@ -175,7 +175,7 @@ export default function ManageLair() {
                 </RowBetween>
                 <RowBetween style={{ alignItems: 'baseline' }}>
                   <TYPE.white fontSize={36} fontWeight={600}>
-                  {`${lairInfo.STARBURSTBalance
+                  {`${holeInfo.STARBURSTBalance
                       ?.toFixed(10, { groupSeparator: ',' })}`}
                   </TYPE.white>
                   <TYPE.white>
@@ -200,7 +200,7 @@ export default function ManageLair() {
               Deposit
             </ButtonPrimary>
 
-            {lairInfo?.xSTARBURSTBalance?.greaterThan(JSBI.BigInt(0)) && (
+            {holeInfo?.xSTARBURSTBalance?.greaterThan(JSBI.BigInt(0)) && (
               <>
                 <ButtonPrimary
                   padding="8px"
