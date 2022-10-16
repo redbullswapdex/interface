@@ -5,7 +5,7 @@
       "inputs": [
         {
           "internalType": "contract IERC20",
-          "name": "_quick",
+          "name": "_starburst",
           "type": "address"
         }
       ],
@@ -209,7 +209,7 @@
     },
     {
       "inputs": [],
-      "name": "quick",
+      "name": "starburst",
       "outputs": [
         {
           "internalType": "contract IERC20",
@@ -306,7 +306,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_quickAmount",
+          "name": "_starburstAmount",
           "type": "uint256"
         }
       ],
@@ -319,7 +319,7 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_dQuickAmount",
+          "name": "_xStarburstAmount",
           "type": "uint256"
         }
       ],
@@ -336,11 +336,11 @@
           "type": "address"
         }
       ],
-      "name": "QUICKBalance",
+      "name": "STARBURSTBalance",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "quickAmount_",
+          "name": "starburstAmount_",
           "type": "uint256"
         }
       ],
@@ -352,15 +352,15 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_dQuickAmount",
+          "name": "_xStarburstAmount",
           "type": "uint256"
         }
       ],
-      "name": "dQUICKForQUICK",
+      "name": "xSTARBURSTForSTARBURST",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "quickAmount_",
+          "name": "starburstAmount_",
           "type": "uint256"
         }
       ],
@@ -372,15 +372,15 @@
       "inputs": [
         {
           "internalType": "uint256",
-          "name": "_quickAmount",
+          "name": "_starburstAmount",
           "type": "uint256"
         }
       ],
-      "name": "QUICKForDQUICK",
+      "name": "STARBURSTForXSTARBURST",
       "outputs": [
         {
           "internalType": "uint256",
-          "name": "dQuickAmount_",
+          "name": "xStarburstAmount_",
           "type": "uint256"
         }
       ],
