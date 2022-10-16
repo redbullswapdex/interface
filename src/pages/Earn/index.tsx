@@ -1,11 +1,11 @@
 import React, {  RefObject, useState, useCallback, useRef, useEffect } from 'react'
 import { AutoColumn } from '../../components/Column'
 import styled from 'styled-components'
-import { STAKING_REWARDS_INFO, useStakingInfo, useOldStakingInfo, useLairInfo, StakingInfo } from '../../state/stake/hooks'
+import { STAKING_REWARDS_INFO, useStakingInfo, useOldStakingInfo, useHoleInfo, StakingInfo } from '../../state/stake/hooks'
 import { TYPE, ExternalLink} from '../../theme'
 import { isMobile } from 'react-device-detect'
 import PoolCard from '../../components/earn/PoolCard'
-import LairCard from '../../components/StarburstHole/HoleCard'
+import HoleCard from '../../components/StarburstHole/HoleCard'
 
 import { RowBetween } from '../../components/Row'
 import { ButtonPrimary } from '../../components/Button'
@@ -106,7 +106,7 @@ export default function Earn() {
   const { chainId } = useActiveWeb3React()
   const stakingInfos = useStakingInfo()
   const [pools] = useState<StakingInfo[]>(stakingInfos);
-  const lairInfo = useLairInfo();
+  const holeInfo = useHoleInfo();
   const oldStakingInfos = useOldStakingInfo();
   const DataRow = styled(RowBetween)`
     ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -255,12 +255,12 @@ export default function Earn() {
       </TopSection>
       <AutoColumn gap="lg" style={{ width: '100%', maxWidth: '720px' }}>
         <DataRow style={{ alignItems: 'baseline' }}>
-          <TYPE.mediumHeader style={{ marginTop: '0.5rem' }}>Dragon's Lair</TYPE.mediumHeader>
+          <TYPE.mediumHeader style={{ marginTop: '0.5rem' }}>Black Hole</TYPE.mediumHeader>
           
         </DataRow>
 
         <PoolSection>
-        <LairCard lairInfo={lairInfo}/>
+        <HoleCard holeInfo={holeInfo}/>
         </PoolSection>
       </AutoColumn>
 
